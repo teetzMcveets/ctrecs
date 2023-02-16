@@ -236,11 +236,18 @@ h1 {
     background-image: radial-gradient(circle at bottom right, #222, #333, #444, #404040);
     display: flex;
     overflow: scroll;
+    z-index: -2;
 }
 
 /* MEDIA SCREEN SIZES
 ================================================ */
-/* MOBILE SCREE HORIZONTAL */
-/* @media screen and (max-width: 720) {
+/* MOBILE SCREE HORIZONTAL
+@media screen and (max-width: 720) {
+    .main-content-container {
+        left: 20px;
+    }
 
-} */
+    .searchbar-container {
+        display: none;
+    }
+}    */
