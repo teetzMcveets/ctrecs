@@ -52,6 +52,22 @@ h1 {
     padding: 10px 0 20px 0;
 }
 
+@media screen and (max-width: 768px) {
+    .nav-top-container {
+        display: block;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .nav-top-container .logo img {
+        margin-right: 0;
+    }
+
+    .nav-top-container .menu {
+        margin-top: 10px;
+    }
+}
+
 .yourlogo-container {
     border: 2px solid #737373;
     position: relative;
@@ -240,11 +256,5 @@ h1 {
     display: flex;
 }
 
-/* MAIN CONTENT CONTAINER
-================================================ */
-@media screen and (max-width: 768px) {
-    .nav-top-container {
-        display: fixed;
-    }
-}
+
 
