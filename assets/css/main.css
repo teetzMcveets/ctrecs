@@ -239,12 +239,3 @@ h1 {
     overflow: scroll;
     z-index: -2;
 }
-
-/* MEDIA SCREEN SIZES
-================================================ */
-/* MOBILE SCREEN HORIZONTAL */
-@media screen and (max-width: 320px) {
-    .thispage-links-container {
-        border: 3px solid red;
-    }
-}   
