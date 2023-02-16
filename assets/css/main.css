@@ -66,13 +66,6 @@ h1 {
     cursor: pointer;
 }
 
-@media screen and (max-width: 720px) {
-    .yourlogo-container {
-        width: 5px;
-        height: 5px;
-    }
-}
-
 .yourlogo-img {
     width: 30px;
     height: 30px;
@@ -247,5 +240,9 @@ h1 {
     display: flex;
 }
 
+/* MEDIA SCREEN SIZES
+================================================ */
+/* MOBILE SCREE HORIZONTAL */
+/* @media screen and (max-width: 720px) {
 
-
+} */
