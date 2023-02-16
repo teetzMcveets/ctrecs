@@ -241,13 +241,20 @@ h1 {
 
 /* MEDIA SCREEN SIZES
 ================================================ */
-/* MOBILE SCREE HORIZONTAL
-@media screen and (max-width: 720) {
-    .main-content-container {
-        left: 20px;
-    }
-
-    .searchbar-container {
+/* MOBILE SCREEN HORIZONTAL */
+@media screen and (max-width: 320) {
+    .nav-top-container {
         display: none;
     }
-}    */
+
+    .side-bar-nav {
+        display: none;
+    }
+
+    .main-content-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: transparent;
+    }
+}   
