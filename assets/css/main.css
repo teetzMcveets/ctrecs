@@ -67,10 +67,6 @@ h1 {
 }
 
 @media screen and (max-width: 720px) {
-    .nav-top-container {
-        display: fixed;
-    }
-
     .yourlogo-container {
         width: 5px;
         height: 5px;
