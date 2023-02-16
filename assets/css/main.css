@@ -54,17 +54,7 @@ h1 {
 
 @media screen and (max-width: 720px) {
     .nav-top-container {
-        display: block;
-        text-align: center;
-        padding: 10px;
-    }
-
-    .nav-top-container .logo img {
-        margin-right: 0;
-    }
-
-    .nav-top-container .menu {
-        margin-top: 10px;
+        display: none;
     }
 }
 
