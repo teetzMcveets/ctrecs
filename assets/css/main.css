@@ -87,6 +87,7 @@ h1 {
     padding: 3px;
     border: 1px solid #dadada;
     border-radius: 5px;
+    z-index: 2;
 }
 
 .dropdown-menu.active {
