@@ -242,7 +242,7 @@ h1 {
 /* MEDIA SCREEN SIZES
 ================================================ */
 /* MOBILE SCREEN HORIZONTAL */
-@media screen and (max-width: 720) {
+@media screen and (max-width: 320) {
     .nav-top-container {
         display: none;
     }
