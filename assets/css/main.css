@@ -52,12 +52,6 @@ h1 {
     padding: 10px 0 20px 0;
 }
 
-@media screen and (max-width: 720px) {
-    .nav-top-container {
-        display: none;
-    }
-}
-
 .yourlogo-container {
     border: 2px solid #737373;
     position: relative;
@@ -70,6 +64,17 @@ h1 {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+}
+
+@media screen and (max-width: 720px) {
+    .nav-top-container {
+        display: fixed;
+    }
+
+    .yourlogo-container {
+        width: 5px;
+        height: 5px;
+    }
 }
 
 .yourlogo-img {
