@@ -243,7 +243,7 @@ h1 {
 /* MEDIA SCREEN SIZES
 ================================================ */
 /* MOBILE SCREE HORIZONTAL */
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 720) {
     .yourlogo-container {
         left: 0;
     }
