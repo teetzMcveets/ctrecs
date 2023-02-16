@@ -244,18 +244,7 @@ h1 {
 ================================================ */
 /* MOBILE SCREEN HORIZONTAL */
 @media screen and (max-width: 320px) {
-    .nav-top-container {
-        display: none;
-    }
-
-    .side-bar-nav {
-        display: none;
-    }
-
-    .main-content-container {
-        position: fixed;
-        top: 0;
-        left: 0;
-        background: transparent;
+    .thispage-links-container {
+        border: 3px solid red;
     }
 }   
