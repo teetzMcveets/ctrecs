@@ -6,8 +6,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C-TRecS | Dashboard</title>
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
+    <!--NAVIGATION TOP-->
+    <div class="nav-top-container">
+
+        <div class="yourlogo-container">
+            <img src="assets/img/Alliance-logo.png" alt="Your Company Logo" class="yourlogo-img">
+            <div class="dropdown-menu">
+                <a href="#">My Details</a>
+                <a href="#">Settings</a>
+                <a href="#" id="logout-link">Log Out</a>
+            </div>
+        </div>
+
+        <div class="page-title">
+            <h1>Dashboard</h1>
+        </div>
+
+        <div class="thispage-links-container">
+            <span class="plain-text">Logged In: Arnie McVeighty</span>
+            <span class="plain-text">Permissions: Admin</span>
+        </div>
+
+        <div class="searchbar-container">
+            <button type="submit" class="searchbar-button">
+                <i class="fas fa-search"></i>
+            </button>
+            <input class="searchbar-text" type="text" placeholder="Search...">
+        </div>
+    </div>
+
+    <!--NAVIGATOIN SIDE-->
+    <nav id="side-bar-nav">
+
+        <div id="navigation-links-container">
+            <div class="icon-container">
+                <a href="#" id="dashboard-icon-link" class="universal-links icon-picture" title="Dashboard">
+                    <i class="fas fa-chart-pie icon-size"></i>
+                </a>
+            </div>
+            <div class="icon-container">
+                <a href="#" id="calandar-icon-link" class="universal-links icon-picture" title="Bookings">
+                    <i class="far fa-calendar-alt icon-size"></i>
+                </a>
+            </div>
+            <div class="icon-container">
+                <a href="#" id="employee-icon-link" class="universal-links icon-picture" title="Employees">
+                    <i class="fas fa-user icon-size"></i>
+                </a>
+            </div>
+            <div class="icon-container">
+                <a href="#" id="client-icon-link" class="universal-links icon-picture" title="Clients">
+                    <i class="fas fa-handshake icon-size"></i>
+                </a>
+            </div>
+            <div class="icon-container">
+                <a href="#" id="timesheet-icon-link" class="universal-links icon-picture" title="Timesheets">
+                    <i class="fas fa-hourglass-start icon-size"></i>
+                </a>
+            </div>
+            <div class="icon-container">
+                <a href="#" id="timesheet-icon-link" class="universal-links icon-picture" title="Reports">
+                    <i class="fas fa-chart-line icon-size"></i>
+                </a>
+            </div>
+        </div>
+        <div class="cloud-logo-container">
+            <a href="#" title="ctrecs-website" target="_blank">
+                <img src="assets/img/Login ctrecs logo.png" alt="C-TRecS Logo" id="cloud-logo">
+            </a>
+        </div>
+    </nav>
+
+    <!--JAVASCRIPT-->
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

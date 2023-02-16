@@ -3,6 +3,12 @@
 .color-scheme {
     color: #333333; /* backgrounud color */
     color: #ffffff; /* white text */
+    color: #015DA3; /* drak blue */
+    color: #0FF0FF; /* cyan blue */
+    color: #008db4; /* mid blue */
+    color: #7d7d7d; /* light grey hover */
+    color: #000000; /* black text when light background */
+    color: #c8c8c8; /* lighter gray */
 }
 
 
@@ -12,5 +18,207 @@
 html {
     background-color: #333333;
     color: #ffffff;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family:'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+}
+
+h1 {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to left, #008db4, #0ff0ff);
+}
+
+/* UNIVERSAL LINKS
+================================================ */
+.universal-links {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.universal-links:hover {
+    color: #0ff0ff;
+}
+
+/* TOP NAV BAR
+================================================ */
+.nav-top-container {
+    /* border: 1px solid white; */
+    align-items: center;
+    position: fixed;
+    width: 98.5%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0 20px 0;
+}
+
+.yourlogo-container {
+    border: 2px solid #737373;
+    position: relative;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.yourlogo-img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+.yourlogo-container:hover {
+    border: 2px solid #0ff;
+    background-color: #dadada
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    width: 120px;
+    background-color: #ffffff;
+    padding: 3px;
+    border: 1px solid #dadada;
+    border-radius: 5px;
+}
+
+.dropdown-menu.active {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 3px;
+    margin: 5px 0;
+    text-decoration: none;
+    color: #000000;
+    border: 1px solid transparent;
+}
+
+#logout-link {
+    border-top: 1px solid #7d7d7d;
+}
+
+.dropdown-menu a:hover {
+    background-image: linear-gradient(to left, #015da3, #0ff0ff);
+    color: white;
+}
+
+.page-title {
+    /* border: 1px solid white; */
+    position: fixed;
+    left: 10%;
+    font-size: 12px;
+}
+
+.thispage-links-container {
+    border: 1px solid transparent;
+    padding: 10px 20px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    background-image: radial-gradient(circle at top right, #555555, #666666, #777777);
+}
+
+.plain-text {
+    padding: 0 20px;
+    color: #c8c8c8;
+}
+
+.visited-link:visited {
+    color: #0FF0FF;
+}
+
+.searchbar-container {
+    /* border: 1px solid white; */
+    width: 15%;
+    height: 30px;
+    background-color: #555555;
+    border-radius: 20px;
+    display: flex;
+}
+
+.searchbar-button {
+    border: none;
+    border-radius: none;
+    background-color: transparent;
+    color: white;
+    padding: 0 10px;
+}
+
+.searchbar-button:hover {
+    cursor: pointer;
+}
+
+.searchbar-text {
+    background: transparent;
+    border: none;
+    color: white;
+}
+
+.searchbar-text:focus {
+    outline: none;
+}
+
+/* SIDE NAV BAR
+================================================ */
+#side-bar-nav {
+    /* border: 1px solid white; */
+    position: fixed;
+    height: 82%;
+    top: 12%;
+    padding: 0 30px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#navigation-links-container {
+    /* border: 1px solid white; */
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 30px;
+}
+
+.icon-picture {
+    font-size: 20px;
+}
+
+.icon-picture.active {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(to left, #015da3, #0ff0ff);
+}
+
+.icon-size {
+    cursor: pointer;
+    transition: transform 0.5s ease, background-image 0.5s ease;
+}
+
+.icon-size:hover {
+    transform: scale(2);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(to left, #015da3, #0ff0ff);
+}
+
+.cloud-logo-container {
+    /* border: 1px solid white; */
+    position: fixed;
+    bottom: 5%;
+}
+
+#cloud-logo {
+    height: 60px;
 }
