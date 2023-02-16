@@ -173,9 +173,9 @@ h1 {
 #side-bar-nav {
     /* border: 1px solid white; */
     position: fixed;
-    height: 82%;
+    height: 90%;
     top: 12%;
-    padding: 0 30px;
+    padding: 0 20px;
     display: flex;
     align-items: flex-start;
     justify-content: center;
