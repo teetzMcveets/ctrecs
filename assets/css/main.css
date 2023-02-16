@@ -1,0 +1,16 @@
+/* COLOR SCHEMES 
+================================================ */
+.color-scheme {
+    color: #333333; /* backgrounud color */
+    color: #ffffff; /* white text */
+}
+
+
+/* UNIVERSAL STYLES 
+================================================ */
+
+html {
+    background-color: #333333;
+    color: #ffffff;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
