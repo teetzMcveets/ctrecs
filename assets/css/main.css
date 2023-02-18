@@ -14,7 +14,6 @@
 
 /* UNIVERSAL STYLES 
 ================================================ */
-
 html {
     background-color: #333333;
     color: #ffffff;
@@ -37,7 +36,50 @@ h1 {
 }
 
 .universal-links:hover {
-    color: #0ff0ff;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#0ff0ff);
+    transition: 300ms;
+}
+
+.universal-links:active {
+    color: white;
+    opacity: 0.8;
+}
+
+/* UNIVERSAL BUTTONS
+================================================ */
+.universal-button {
+    background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#0ff0ff);
+    color: white;
+    width: 150px;
+    height: 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    /* border: 1px solid white; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.universal-button span {
+    background-color: #333;
+    /* border: 1px solid white; */
+    padding: 3px 55px;
+    border-radius: 6px;
+    transition: 300ms;
+}
+
+.universal-button span:hover {
+    background: transparent;
+}
+
+.universal-button:active {
+    border: 3px solid #333;
+    opacity: 0.8;
 }
 
 /* TOP NAV BAR
@@ -239,3 +281,4 @@ h1 {
     overflow: scroll;
     z-index: -2;
 }
+

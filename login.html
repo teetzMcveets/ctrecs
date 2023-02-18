@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C-TRecS | Login</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/login.css">
+</head>
+<body>
+    <div class="login-page-container">
+
+        <div class="main-logo-container">
+            <a class="universal-links" href="#">
+                <img src="assets/img/Login ctrecs logo.png" alt="C-Trecs Logo" id="main-logo">
+            </a>
+        </div>
+
+        <div class="login-form">
+            <form action="#" post="METHOD"> 
+                <label class="login-label" for="us-name"><b>Username / Email Address:</b></label><br>
+                <input class="login-input" type="text" placeholder="Enter username..." name="us-name" id="usname" required><br>
+                <label class="login-label" for="us-psw"><b>Password:</b></label><br>
+                <input class="login-input" type="password" placeholder="Enter password..." name="us-psw" id="us-psw" minlength="8" maxlength="15" required><br>
+                
+                <div class="login-button-container">
+                    <button class="universal-button" type="button" role="button"><span class="text">Login</span></button>
+                </div>
+                
+                <div class="rmember-me-contaner">
+                    <label id="remember-me">
+                        <input type="checkbox" class="universal-checkbox checkbox-location" id="remember-me-checkbox">
+                        <span class="universal-checkmark"></span>
+                        <span class="universal-links" id="remember-me-link">Remember me</span>
+                    </label>
+                </div>
+            </form>
+        </div>
+        <div class="forgot-psw-container">
+            <a class="forgot-psw universal-links" href="#">Forgot password?</a>
+        </div>
+    </div>
+</body>
+</html>
