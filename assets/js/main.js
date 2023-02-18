@@ -31,7 +31,7 @@ if (currentPage.endsWith("index.html")) {
     document.getElementById("employees-icon-link").classList.add("active");
 } else if (currentPage.endsWith("clients.html")) {
     document.getElementById("clients-icon-link").classList.add("active");
-} else if (currentPage.endsWith("timesheet.html")) {
+} else if (currentPage.endsWith("timesheets.html")) {
     document.getElementById("timesheets-icon-link").classList.add("active");
 } else if (currentPage.endsWith("reports.html")) {
     document.getElementById("reports-icon-link").classList.add("active");

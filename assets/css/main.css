@@ -200,12 +200,9 @@ h1 {
 }
 
 .thispage-links-container {
-    border: 1px solid transparent;
     padding: 10px 20px;
-    border-radius: 20px;
     display: flex;
     justify-content: space-between;
-    background-image: radial-gradient(circle at top right, #555555, #666666, #777777);
 }
 
 .plain-text {
