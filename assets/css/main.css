@@ -85,6 +85,41 @@ h2 {
     opacity: 0.8;
 }
 
+.universal-button-2 {
+    background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#0ff0ff);
+    color: white;
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 12px;
+    /* border: 1px solid white; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 22px;
+}
+
+.universal-button-2 span {
+    background-color: #333;
+    /* border: 1px solid white; */
+    width: 100%;
+    height: 80%;
+    border-radius: 6px;
+    transition: 300ms;
+}
+
+.universal-button-2 span:hover {
+    background: transparent;
+}
+
+.universal-button-2:active {
+    border: 1px solid #333;
+    opacity: 0.8;
+}
+
 /* UNIVERSAL CHECKBOX
 ================================================ */
 .universal-checkbox {
@@ -318,11 +353,31 @@ h2 {
     top: 11%;
     left: 6%;
     width: 100%;
-    height: 100%;
+    height: 89%;
     border-top-left-radius: 20px;
     background-image: radial-gradient(circle at bottom right, #222, #333, #444, #404040);
-    display: flex;
     overflow: scroll;
     z-index: -2;
     padding: 0 20px;
+}
+
+/* TABLE QUESTION CONTAINER
+================================================ */
+.question-table {
+    width: 92%;
+    margin-bottom: 20px;
+}
+
+.question-label {
+    font-size: 14px;
+}
+
+.input-box {
+    width: 150px;
+}
+
+.table-button-container {
+    width: 210px;
+    display: flex;
+    justify-content: space-between;
 }
