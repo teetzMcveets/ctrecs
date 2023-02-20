@@ -171,14 +171,14 @@ h2 {
     padding: 10px 0 20px 0;
     border-bottom: 10px solid #333333;
     border-radius: 20px;
-    background-image: radial-gradient(circle at bottom right, #222, #333, #444, #404040);
+    background-image: radial-gradient(circle at bottom right, #222, #333, #222, #404040);
 }
 
 .yourlogo-container {
     border: 2px solid #737373;
     position: relative;
     left: 15px;
-    top: 5px;
+    top: 3px;
     width: 40px;
     height: 40px;
     border-radius: 50%;
