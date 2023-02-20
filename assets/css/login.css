@@ -5,6 +5,7 @@
     /* border: 1px solid white; */
     display: flex;
     flex-direction: column;
+    margin-top: 50px;
 }
 
 .main-logo-container {

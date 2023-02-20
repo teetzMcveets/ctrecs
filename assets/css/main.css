@@ -169,12 +169,16 @@ h2 {
     display: flex;
     justify-content: space-between;
     padding: 10px 0 20px 0;
+    border-bottom: 10px solid #333333;
+    border-radius: 20px;
+    background-image: radial-gradient(circle at bottom right, #222, #333, #444, #404040);
 }
 
 .yourlogo-container {
     border: 2px solid #737373;
     position: relative;
-    left: 20px;
+    left: 15px;
+    top: 5px;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -199,8 +203,8 @@ h2 {
 .dropdown-menu {
     display: none;
     position: absolute;
-    top: 20px;
-    left: 30px;
+    top: 18px;
+    left: 26px;
     width: 120px;
     background-color: #ffffff;
     padding: 3px;
@@ -358,7 +362,7 @@ h2 {
     background-image: radial-gradient(circle at bottom right, #222, #333, #444, #404040);
     overflow: scroll;
     z-index: -2;
-    padding: 0 20px;
+    padding: 15px 0 20px 20px;
 }
 
 /* TABLE QUESTION CONTAINER
@@ -381,3 +385,10 @@ h2 {
     display: flex;
     justify-content: space-between;
 }
+
+/* @media only screen and (max-width: 480px) {
+    .container {
+      width: 270px;
+    }
+  
+  } */
