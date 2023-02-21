@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Booking</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bookings.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    
+    <!--NAVIGATION TOP-->
+    <div class="nav-top-container">
+
+        <div class="yourlogo-container">
+            <img src="assets/img/Alliance-logo.png" alt="Your Company Logo" class="yourlogo-img">
+            <div class="dropdown-menu">
+                <a href="#">My Details</a>
+                <a href="#">Settings</a>
+                <a href="login.html" id="logout-link">Log Out</a>
+            </div>
+        </div>
+
+        <div class="page-title">
+            <h1>Bookings</h1>
+        </div>
+
+        <div class="thispage-links-container">
+            <span class="plain-text"><a href="bookings.html" class="universal-links">Browser</a></span>
+            <span class="plain-text"><a href="create-bookings.html" class="universal-links  visited-link">Create Booking</a></span>
+            <span class="plain-text"><a href="runningsheet-bookings.html" class="universal-links">Running Sheet</a></span>
+        </div>
+
+        <!-- <div class="searchbar-container">
+            <button type="submit" class="searchbar-button">
+                <i class="fas fa-search"></i>
+            </button>
+            <input class="searchbar-text" type="text" placeholder="Search...">
+        </div> -->
+    </div>
+
+    <!--NAVIGATOIN SIDE-->
+    <nav id="side-bar-nav">
+
+        <div id="navigation-links-container">
+            <div class="icon-container">
+                <a href="index.html" id="dashboard-icon-link" class="universal-links icon-picture" title="Dashboard">
+                    <i class="fas fa-chart-pie icon-size"></i>
+                </a>
+            </div>
+            <div class="icon-container">
+                <a href="bookings.html" id="calandar-icon-link" class="universal-links icon-picture" title="Bookings">
+                    <i class="far fa-calendar-alt icon-size"></i>
+                </a>
+            </div>
+            <div class="icon-container">
+                <a href="employees.html" id="employees-icon-link" class="universal-links icon-picture" title="Employees">
+                    <i class="fas fa-user icon-size"></i>
+                </a>
+            </div>
+            <div class="icon-container">
+                <a href="clients.html" id="clients-icon-link" class="universal-links icon-picture" title="Clients">
+                    <i class="fas fa-handshake icon-size"></i>
+                </a>
+            </div>
+            <div class="icon-container">
+                <a href="timesheets.html" id="timesheets-icon-link" class="universal-links icon-picture" title="Timesheets">
+                    <i class="fas fa-hourglass-start icon-size"></i>
+                </a>
+            </div>
+            <div class="icon-container">
+                <a href="reports.html" id="reports-icon-link" class="universal-links icon-picture" title="Reports">
+                    <i class="fas fa-chart-line icon-size"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="cloud-logo-container">
+            <a href="#" title="ctrecs-website" target="_blank">
+                <img src="assets/img/Login ctrecs logo.png" alt="C-TRecS Logo" id="cloud-logo">
+            </a>
+        </div>
+
+    </nav>
+
+    <!--MAIN BODY-->
+    <div class="main-content-container">
+        <h2>Create Driving Booking</h2>
+
+        <div class="create-booking-driv-container">
+            <form action="confirmed-bookings.html">
+                <div class="question-container">
+                    <div class="label-box-container">
+                        <label for="company-name" class="label-box">Company Name:</label>
+                    </div>
+                    <div class="input-box-container">
+                        <input type="text" id="company-name" name="company-name" class="input-box-form">
+                    </div>
+                </div>
+                <div class="question-container">
+                    <div class="label-box-container">
+                        <label for="booking-template" class="label-box">Booking Template:</label>
+                    </div>
+                    <div class="input-box-container">
+                        <input type="text" id="booking-template" name="booking-template" class="input-box-form">
+                    </div>
+                </div>
+                <div class="question-container">
+                    <div class="label-box-container">
+                        <label for="licence" class="label-box">Licence:</label>
+                    </div>
+                    <div class="input-box-container">
+                        <select class="option-box" id="licence" name="licence">
+                            <option value="void" selected>- select one -</option>
+                            <option value="LGV CE">LGV CE</option>
+                            <option value="LGV C">LGV C</option>
+                            <option value="7.5T">7.5 T</option>
+                            <option value="Van">Van</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="question-container">
+                    <div class="label-box-container">
+                        <label for="req-by" class="label-box">Requested By:</label>
+                    </div>
+                    <div class="input-box-container">
+                        <input type="text" id="req-by" name="req-by" class="input-box-form">
+                    </div>
+                </div>
+                <div class="question-container">
+                    <div class="label-box-container">
+                        <label for="asap-start" class="label-box">ASAP Start:</label>
+                    </div>
+                    <div class="input-box-container">
+                        <input type="checkbox" id="asap-start" name="asap-start">
+                    </div>
+                </div>
+                <div class="question-container">
+                    <div class="label-box-container">
+                        <label for="start-date" class="label-box">Start Date:</label>
+                    </div>
+                    <div class="input-box-container">
+                        <input type="date" id="start-date" name="start-date" class="date-box">
+                    </div>
+                </div>
+                <div class="question-container">
+                    <div class="label-box-container">
+                        <label for="start-time" class="label-box">Start Time:</label>
+                    </div>
+                    <div class="input-box-container">
+                        <input type="time" id="start-time" name="start-time" class="time-box">
+                    </div>
+                </div>
+                <div class="question-container">
+                    <div class="label-box-container">
+                        <label for="start-time" class="label-box">Booking Type:</label>
+                    </div>
+                    <div class="input-box-container">
+                        <div class="checkbox-container">
+                            <label class="small-label" for="immediate">IMM:</label>
+                            <input type="checkbox" id="immediate" name="immediate" value="immediate">
+                            <span>|</span>
+                            <label class="small-label" for="tomorrow">TMR:</label>
+                            <input type="checkbox" id="tomorrow" name="tomorrow" value="tomorrow">
+                            <span>|</span>
+                            <label class="small-label" for="future">FUT:</label>
+                            <input type="checkbox" id="future" name="future" value="future">
+                            <span>|</span>
+                            <label class="small-label" for="pre-booking">PRE:</label>
+                            <input type="checkbox" id="pre-booking" name="pre-booking" value="pre-booking">
+                            <span>|</span>
+                            <label class="small-label" for="replacement">REP:</label>
+                            <input type="checkbox" id="replacement" name="replacement" value="replacement">
+                            <span>|</span>
+                            <label class="small-label" for="did-not-go">DNG:</label>
+                            <input type="checkbox" id="did-not-go" name="did-not-go" value="did-not-go">
+                            <span>|</span>
+                            <label class="small-label" for="walked-off-job">WOJ:</label>
+                            <input type="checkbox" id="walked-off-job" name="walked-off-job" value="walked-off-job">
+                            <span>|</span>
+                            <label class="small-label" for="lost">LST:</label>
+                            <input type="checkbox" id="lost" name="lost" value="lost">
+                            <span>|</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="question-container">
+                    <div class="label-box-container">
+                        <label for="reporting-to" class="label-box">Reporting To:</label>
+                    </div>
+                    <div class="input-box-container">
+                        <input type="text" id="reporting-to" name="reporting-to" class="input-box-form">
+                    </div>
+                </div>
+                <div class="question-container">
+                    <div class="label-box-container">
+                        <label for="trailer" class="label-box">Trailer:</label>
+                    </div>
+                    <div class="input-box-container">
+                        <select class="option-box" id="trailer" name="trailer">
+                            <option value="void" selected>- select one -</option>
+                            <option value="box">Box</option>
+                            <option value="car-transporter">Car Transporter</option>
+                            <option value="container">Container</option>
+                            <option value="curtainsider">Curtainsider</option>
+                            <option value="double-decker">Double Decjer</option>
+                            <option value="draw-bar-aframe">Draw Bar A Frame</option>
+                            <option value="draw-bar-aframe">Draw Bar Close Couple</option>
+                            <option value="flat-bed">Flat Bed</option>
+                            <option value="Fridges">Fridges</option>
+                            <option value="skip-chains">Skip Chains</option>
+                            <option value="skip-roro">Skip RORO</option>
+                            <option value="tail-lift">Tail Lift</option>
+                            <option value="tankers">Tanker</option>
+                            <option value="tippers">Tipper</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="question-container">
+                    <div class="label-box-container">
+                        <label for="gearbox" class="label-box">Gearbox:</label>
+                    </div>
+                    <div class="input-box-container">
+                        <select class="option-box" id="gearbox" name="gearbox">
+                            <option value="n-a" selected>~ select one ~</option>
+                            <option value="automatic">Automatic</option>
+                            <option value="manual">Manual</option>
+                            <option value="splitter">Splitter</option>
+                            <option value="straight">Straight</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="question-container">
+                    <div class="label-box-container">
+                        <label for="load" class="label-box">Load:</label>
+                    </div>
+                    <div class="input-box-container">
+                        <select class="option-box" id="load" name="load">
+                            <option value="n-a" selected>~ select one ~</option>
+                            <option value="automotive">Automotive</option>
+                            <option value="cages">Cages</option>
+                            <option value="cash-handling">Cash Handling</option>
+                            <option value="food-chilled-frozen">Food Chilled / Frozen</option>
+                            <option value="furniture">Furniture</option>
+                            <option value="general-haulage-pallet">General Haulage Palletised</option>
+                            <option value="glass">Glass</option>
+                            <option value="parcels">Parcels</option>
+                            <option value="steel-bar">Steel Bar</option>
+                            <option value="steel-coil">Steel Coil</option>
+                            <option value="steel-oiled-pickled">Steel Oiled / Pickled</option>
+                            <option value="steel-sheet">Steel Sheet</option>
+                            <option value="steel-tubes">Steel Tubes</option>
+                            <option value="white-goods">White Goods</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="question-container">
+                    <div class="label-box-container">
+                        <label for="destination" class="label-box">Destination:</label>
+                    </div>
+                    <div class="input-box-container">
+                        <input type="text" id="destination" name="destination" class="input-box-form">
+                    </div>
+                </div>
+                <div class="question-container">
+                    <div class="label-box-container">
+                        <label for="work-crit" class="label-box">Work Criteria:</label>
+                    </div>
+                    <div class="input-box-container">
+                        <div class="checkbox-container">
+                            <label class="small-label" for="handball">Handball:</label>
+                            <input type="checkbox" id="handball" name="handball" value="handball">
+                            <span>|</span>
+                            <label class="small-label" for="night-out">Night Out:</label>
+                            <input type="checkbox" id="night-out" name="night-out" value="night-out">
+                            <span>|</span>
+                            <label class="small-label" for="chain">Chain:</label>
+                            <input type="checkbox" id="chain" name="chain" value="chain">
+                            <span>|</span>
+                            <label class="small-label" for="rope">Rope:</label>
+                            <input type="checkbox" id="rope" name="rope" value="rope">
+                            <span>|</span>
+                            <label class="small-label" for="sheet">Sheet:</label>
+                            <input type="checkbox" id="sheet" name="sheet" value="sheet">
+                            <span>|</span>
+                            <label class="small-label" for="strap">Strap:</label>
+                            <input type="checkbox" id="strap" name="strap" value="strap">
+                            <span>|</span>
+                            <label class="small-label" for="shunting">Shunting:</label>
+                            <input type="checkbox" id="shunting" name="shunting" value="shunting">
+                            <span>|</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="question-container">
+                    <div class="label-box-container">
+                        <label for="certificates" class="label-box">Certificates:</label>
+                    </div>
+                    <div class="input-box-container">
+                        <div class="checkbox-container">
+                            <label class="small-label" for="epic-card">Epic Card:</label>
+                            <input type="checkbox" id="epic-card" name="epic-card" value="epic-card">
+                            <span>|</span>
+                            <label class="small-label" for="hiab">HIAB:</label>
+                            <input type="checkbox" id="hiab" name="hiab" value="hiab">
+                            <span>|</span>
+                            <label class="small-label" for="ipaf">IPAF:</label>
+                            <input type="checkbox" id="ipaf" name="ipaf" value="ipaf">
+                            <span>|</span>
+                            <label class="small-label" for="level-4d">Level 4 D:</label>
+                            <input type="checkbox" id="level-4d" name="level-4d" value="level-4d">
+                            <span>|</span>
+                            <label class="small-label" for="moffett">Moffett:</label>
+                            <input type="checkbox" id="moffett" name="moffett" value="moffett">
+                            <span>|</span>
+                            <label class="small-label" for="rhids">RHIDS:</label>
+                            <input type="checkbox" id="rhids" name="rhids" value="rhids">
+                            <span>|</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="question-container">
+                    <div class="label-box-container">
+                        <label for="min-exp" class="label-box">Min Years Exp:</label>
+                    </div>
+                    <div class="input-box-container">
+                        <input type="number" id="min-exp" name="min-exp">
+                    </div>
+                </div>
+                <div class="question-container">
+                    <div class="label-box-container">
+                        <label for="min-age" class="label-box">Min Age:</label>
+                    </div>
+                    <div class="input-box-container">
+                        <input type="number" id="min-age" name="min-age">
+                    </div>
+                </div>
+                <div class="question-container">
+                    <div class="label-box-container">
+                        <label for="duration" class="label-box">Duration:</label>
+                    </div>
+                    <div class="input-box-container">
+                        <input type="number" id="duration" name="duration">
+                    </div>
+                </div>
+                <div class="question-container">
+                    <div class="label-box-container">
+                        <label for="misc-equipment" class="label-box">Misc Equipment:</label>
+                    </div>
+                    <div class="input-box-container">
+                        <input type="text" id="misc-equipment" name="misc-equipment" class="input-box-form">
+                    </div>
+                </div>
+                <div class="question-container">
+                    <div class="label-box-container">
+                        <label for="other-rem" class="label-box">Other Remarks:</label>
+                    </div>
+                    <div class="input-box-container">
+                        <textarea id="other-rem" name="other-rem" rows="4" cols="61"></textarea>
+                    </div>
+                </div>
+
+                <div class="submit-booking-button-container">
+                    <button type="submit" class="universal-button-3">
+                        <span>Submit Booking</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="question-container">
+        <div class="label-box-container">
+            <label for="" class="label-box">:</label>
+        </div>
+        <div class="input-box-container">
+            <input type="text" id="" name="" class="input-box">
+        </div>
+    </div>
+
+    <!--JAVASCRIPT-->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/create-bookings.js"></script>
+</body>
+</html>

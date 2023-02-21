@@ -96,7 +96,7 @@
                 <tr>
                     <td><label for="wk-com-date" class="question-label">Week Commencing:</label>        </td>
                     <td></td>
-                    <td><label for="days-shown" class="question-label">Days Shown:</label></td>
+                    <!-- <td><label for="days-shown" class="question-label">Days Shown:</label></td> -->
                     <td><label for="search-candidate" class="question-label">Employee:</label></td>
                     <td><label for="search-client" class="question-label">Client:</label></td>
                     <td><label for="show-only" class="question-label">Show Only:</label></td>
@@ -105,14 +105,14 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><input type="date" name="wk-com-date" id="wk-com-date" class="date-input"></td>
+                    <td><input type="date" name="wk-com-date" id="wk-com-date" class="date-input" onchange="validateDate()"></td>
                     <td>
                         <div class="table-button-container">
-                            <button class="universal-button-2"><span>Prev Wk</span></button>
-                            <button class="universal-button-2"><span>Next Wk</span></button>
+                            <button class="universal-button-2" onclick="prevWeek()"><span>Prev Wk</span></button>
+                            <button class="universal-button-2" onclick="nextWeek()"><span>Next Wk</span></button>
                         </div>
                     </td>
-                    <td><input type="number" class="number-days-input" id="days-shown" name="days-shown" placeholder="7"></td>
+                    <!-- <td><input type="number" class="number-days-input" id="days-shown" name="days-shown" placeholder="7"></td> -->
                     <td><input type="text" id="search-emp" class="input-box" onkeyup="searchEmployee()" placeholder="Search employee..."></td>
                     <td><input type="text" id="search-client" class="input-box" onkeyup="searchClient()" placeholder="Search client..."></td>
                     <td>
@@ -125,266 +125,1229 @@
                         <span class="universal-checkmark"></span>
                         <span class="universal-links" id="tbc-label"><label for="show-tbc" class="question-label">To be confirmed</label></span>
                     </td>
-                    <td><button class="universal-button-2"><span>Confirm</span></button></td>
+                    <td><button class="universal-button-2" id="confirm-browser-button"><span>Confirm</span></button></td>
                 </tr>
             </tbody>
         </table>
 
-
-        <table class="booking-table-container">
-            <thead class="browser-header">
-                <tr>
-                    <td style="padding-left: 5px;">Ref:</td>
-                    <td style="width: 100px;">Client:</td>
-                    <td style="width: 150px;">Employee:</td>
-                    <td>Licence:</td>
-                    <td class="week-date-browser">Sunday<br>dd/mm/yyyy</td>
-                    <td class="week-date-browser">Monday<br>dd/mm/yyyy</td>
-                    <td class="week-date-browser">Tuesday<br>dd/mm/yyyy</td>
-                    <td class="week-date-browser">Wednesday<br>dd/mm/yyyy</td>
-                    <td class="week-date-browser">Thursday<br>dd/mm/yyyy</td>
-                    <td class="week-date-browser">Friday<br>dd/mm/yyyy</td>
-                    <td class="week-date-browser">Saturday<br>dd/mm/yyyy</td>
-                    <td class="rebook-text">Info:</td>
-                    <td class="rebook-text">Rebook</td>
-                </tr>
-            </thead>
-            <tbody id="bookings-table" class="browser-body">
-                <tr class="browser-rows">
-                    <td><a href="#" class="universal-links">1001</a></td>
-                    <td><a href="#" class="universal-links">Circle Express</a></td>
-                    <td><a href="#" class="universal-links">Ben Bennett</a></td>
-                    <td>LGV CE</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><button class="browser-button status-confirmed">00:00-00:00</button></td>
-                    <td><button class="browser-button status-tbc">00:00-00:00</button></td>
-                    <td></td>
-                    <td><button class="info-buttons ibutton-style"><i class="fas fa-info-circle"></i></button></td>
-                    <td class="center-cell"><a href="#" class="universal-links"><i class="fas fa-sync"></i></a></td>
-                </tr>
-                <tr class="browser-rows">
-                    <td><a href="#" class="universal-links">1002</a></td>
-                    <td><a href="#" class="universal-links">Circle Express</a></td>
-                    <td><a href="#" class="universal-links">Selvin Brown</a></td>
-                    <td>LGV C</td>
-                    <td></td>
-                    <td><button class="browser-button status-confirmed">00:00-00:00</button></td>
-                    <td><button class="browser-button status-confirmed">00:00-00:00</button></td>
-                    <td><button class="browser-button status-confirmed">00:00-00:00</button></td>
-                    <td><button class="browser-button status-confirmed">00:00-00:00</button></td>
-                    <td><button class="browser-button status-confirmed">00:00-00:00</button></td>
-                    <td></td>
-                    <td><button class="info-buttons ibutton-style"><i class="fas fa-info-circle"></i></button></td>
-                    <td class="center-cell"><a href="#" class="universal-links"><i class="fas fa-sync"></i></a></td>
-                </tr>
-                <tr class="browser-rows">
-                    <td><a href="#" class="universal-links">1003</a></td>
-                    <td><a href="#" class="universal-links">Circle Express</a></td>
-                    <td>
-                        <button class="universal-button-2"><span>AV Drivers</span></button>
-                    </td>
-                    <td>LGV C</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><button class="browser-button status-unfilled">00:00-00:00</button></td>
-                    <td><button class="browser-button status-unfilled">00:00-00:00</button></td>
-                    <td></td>
-                    <td><button class="info-buttons ibutton-style"><i class="fas fa-info-circle"></i></button></td>
-                    <td class="center-cell"><a href="#" class="universal-links"><i class="fas fa-sync"></i></a></td>
-                </tr>
-                <tr class="browser-rows lost-employee-booking">
-                    <td><a href="#" class="universal-links">1004</a></td>
-                    <td><a href="#" class="universal-links">Circle Express</a></td>
-                    <td>Lost Booking</td>
-                    <td>LGV CE</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><button class="browser-button status-lost">00:00-00:00</button></td>
-                    <td><button class="browser-button status-lost">00:00-00:00</button></td>
-                    <td><button class="info-buttons ibutton-style"><i class="fas fa-info-circle"></i></button></td>
-                    <td class="center-cell"><a href="#" class="universal-links"><i class="fas fa-sync"></i></a></td>
-                </tr>
-                <tr class="browser-rows">
-                    <td><a href="#" class="universal-links">1005</a></td>
-                    <td><a href="#" class="universal-links">Dreams Ltd</a></td>
-                    <td><a href="#" class="universal-links">Shane Dutton</a></td>
-                    <td>LGV CE</td>
-                    <td></td>
-                    <td><button class="browser-button status-confirmed">00:00-00:00</button></td>
-                    <td><button class="browser-button status-confirmed">00:00-00:00</button></td>
-                    <td><button class="browser-button status-confirmed">00:00-00:00</button></td>
-                    <td><button class="browser-button status-confirmed">00:00-00:00</button></td>
-                    <td><button class="browser-button status-confirmed">00:00-00:00</button></td>
-                    <td></td>
-                    <td><button class="info-buttons ibutton-style"><i class="fas fa-info-circle"></i></button></td>
-                    <td class="center-cell"><a href="#" class="universal-links"><i class="fas fa-sync"></i></a></td>
-                </tr>
-                <tr class="browser-rows">
-                    <td><a href="#" class="universal-links">1006</a></td>
-                    <td><a href="#" class="universal-links">Dreams Ltd</a></td>
-                    <td><a href="#" class="universal-links">Antonio Briar</a></td>
-                    <td>LGV CE</td>
-                    <td></td>
-                    <td><button class="browser-button status-confirmed">00:00-00:00</button></td>
-                    <td><button class="browser-button status-confirmed">00:00-00:00</button></td>
-                    <td><button class="browser-button status-woj">00:00-00:00</button></td>
-                    <td></td>
-                    <td><button class="browser-button status-tbc">00:00-00:00</button></td>
-                    <td><button class="browser-button status-cancel">00:00-00:00</button></td>
-                    <td><button class="info-buttons ibutton-style"><i class="fas fa-info-circle"></i></button></td>
-                    <td class="center-cell"><a href="#" class="universal-links"><i class="fas fa-sync"></i></a></td>
-                </tr>
-                <tr class="browser-rows">
-                    <td><a href="#" class="universal-links">1007</a></td>
-                    <td><a href="#" class="universal-links">Fireglass UK Ltd</a></td>
-                    <td><a href="#" class="universal-links">Dwain Powell</a></td>
-                    <td>LGV C</td>
-                    <td></td>
-                    <td><button class="browser-button status-confirmed">00:00-00:00</button></td>
-                    <td><button class="browser-button status-confirmed">00:00-00:00</button></td>
-                    <td></td>
-                    <td><button class="browser-button status-confirmed">00:00-00:00</button></td>
-                    <td><button class="browser-button status-confirmed">00:00-00:00</button></td>
-                    <td></td>
-                    <td><button class="info-buttons ibutton-style"><i class="fas fa-info-circle"></i></button></td>
-                    <td class="center-cell"><a href="#" class="universal-links"><i class="fas fa-sync"></i></a></td>
-                </tr>
-                <tr class="browser-rows">
-                    <td><a href="#" class="universal-links">1008</a></td>
-                    <td><a href="#" class="universal-links">Fireglass UK Ltd</a></td>
-                    <td><a href="#" class="universal-links">Vitalijus Kotilarova</a></td>
-                    <td>7.5 T</td>
-                    <td></td>
-                    <td><button class="browser-button status-confirmed">00:00-00:00</button></td>
-                    <td><button class="browser-button status-confirmed">00:00-00:00</button></td>
-                    <td><button class="browser-button status-confirmed">00:00-00:00</button></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><button class="info-buttons ibutton-style"><i class="fas fa-info-circle"></i></button></td>
-                    <td class="center-cell"><a href="#" class="universal-links"><i class="fas fa-sync"></i></a></td>
-                </tr>
-                <tr class="browser-rows">
-                    <td><a href="#" class="universal-links">1009</a></td>
-                    <td><a href="#" class="universal-links">RGF UK Ltd</a></td>
-                    <td><a href="#" class="universal-links">Kulwant Singh</a></td>
-                    <td>LGV CE</td>
-                    <td></td>
-                    <td></td>
-                    <td><button class="browser-button status-confirmed">00:00-00:00</button></td>
-                    <td><button class="browser-button status-confirmed">00:00-00:00</button></td>
-                    <td><button class="browser-button status-dng">00:00-00:00</button></td>
-                    <td><button class="browser-button status-cancel">00:00-00:00</button></td>
-                    <td></td>
-                    <td><button class="info-buttons ibutton-style"><i class="fas fa-info-circle"></i></button></td>
-                    <td class="center-cell"><a href="#" class="universal-links"><i class="fas fa-sync"></i></a></td>
-                </tr>
-                <tr class="browser-rows">
-                    <td><a href="#" class="universal-links">1010</a></td>
-                    <td><a href="#" class="universal-links">RGF UK Ltd</a></td>
-                    <td>
-                        <button class="universal-button-2"><span>AV Drivers</span></button>
-                    </td>
-                    <td>LGV CE</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><button class="browser-button status-unfilled">00:00-00:00</button></td>
-                    <td><button class="info-buttons ibutton-style"><i class="fas fa-info-circle"></i></button></td>
-                    <td class="center-cell"><a href="#" class="universal-links"><i class="fas fa-sync"></i></a></td>
-                </tr>
-                <tr class="browser-rows lost-employee-booking">
-                    <td><a href="#" class="universal-links">1011</a></td>
-                    <td><a href="#" class="universal-links">RGF UK Ltd</a></td>
-                    <td>Lost Booking</td>
-                    <td>LGV CE</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><button class="browser-button status-lost">00:00-00:00</button></td>
-                    <td></td>
-                    <td><button class="info-buttons ibutton-style"><i class="fas fa-info-circle"></i></button></td>
-                    <td class="center-cell"><a href="#" class="universal-links"><i class="fas fa-sync"></i></a></td>
-                </tr>
-                <tr class="browser-rows">
-                    <td><a href="#" class="universal-links">1012</a></td>
-                    <td><a href="#" class="universal-links">TFL Transport</a></td>
-                    <td><a href="#" class="universal-links">Kulwant Singh</a></td>
-                    <td>LGV C</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><button class="browser-button status-confirmed">00:00-00:00</button></td>
-                    <td></td>
-                    <td><button class="info-buttons ibutton-style"><i class="fas fa-info-circle"></i></button></td>
-                    <td class="center-cell"><a href="#" class="universal-links"><i class="fas fa-sync"></i></a></td>
-                </tr>
-                <tr class="browser-rows">
-                    <td><a href="#" class="universal-links">1013</a></td>
-                    <td><a href="#" class="universal-links">The APC Parcels</a></td>
-                    <td><a href="#" class="universal-links">Colin Jones</a></td>
-                    <td>LGV CE</td>
-                    <td></td>
-                    <td><button class="browser-button status-confirmed">00:00-00:00</button></td>
-                    <td><button class="browser-button status-confirmed">00:00-00:00</button></td>
-                    <td><button class="browser-button status-confirmed">00:00-00:00</button></td>
-                    <td><button class="browser-button status-confirmed">00:00-00:00</button></td>
-                    <td></td>
-                    <td></td>
-                    <td><button class="info-buttons ibutton-style"><i class="fas fa-info-circle"></i></button></td>
-                    <td class="center-cell"><a href="#" class="universal-links"><i class="fas fa-sync"></i></a></td>
-                </tr>
-                <tr class="browser-rows">
-                    <td><a href="#" class="universal-links">1014</a></td>
-                    <td><a href="#" class="universal-links">The APC Parcels</a></td>
-                    <td><a href="#" class="universal-links">Rafal Kaczmarczyk</a></td>
-                    <td>LGV CE</td>
-                    <td></td>
-                    <td><button class="browser-button status-confirmed">00:00-00:00</button></td>
-                    <td><button class="browser-button status-confirmed">00:00-00:00</button></td>
-                    <td><button class="browser-button status-confirmed">00:00-00:00</button></td>
-                    <td><button class="browser-button status-confirmed">00:00-00:00</button></td>
-                    <td><button class="browser-button status-confirmed">00:00-00:00</button></td>
-                    <td></td>
-                    <td><button class="info-buttons ibutton-style"><i class="fas fa-info-circle"></i></button></td>
-                    <td class="center-cell"><a href="#" class="universal-links"><i class="fas fa-sync"></i></a></td>
-                </tr>
-                <tr class="browser-rows">
-                    <td><a href="#" class="universal-links">1015</a></td>
-                    <td><a href="#" class="universal-links">The APC Parcels</a></td>
-                    <td><button class="universal-button-2"><span>AV Drivers</span></button></td>
-                    <td>LGV CE</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><button class="browser-button status-unfilled">00:00-00:00</button></td>
-                    <td><button class="browser-button status-unfilled">00:00-00:00</button></td>
-                    <td></td>
-                    <td><button class="info-buttons ibutton-style"><i class="fas fa-info-circle"></i></button></td>
-                    <td class="center-cell"><a href="#" class="universal-links"><i class="fas fa-sync"></i></a></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+        <div class="booking-browser" id="bb-wc01-01">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>01/01/2023</td>
+                        <td class="week-date-browser">Monday<br>02/01/2023</td>
+                        <td class="week-date-browser">Tuesday<br>03/01/2023</td>
+                        <td class="week-date-browser">Wednesday<br>04/01/2023</td>
+                        <td class="week-date-browser">Thursday<br>05/01/2023</td>
+                        <td class="week-date-browser">Friday<br>06/01/2023</td>
+                        <td class="week-date-browser">Saturday<br>07/01/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc08-01">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>08/01/2023</td>
+                        <td class="week-date-browser">Monday<br>09/01/2023</td>
+                        <td class="week-date-browser">Tuesday<br>10/01/2023</td>
+                        <td class="week-date-browser">Wednesday<br>11/01/2023</td>
+                        <td class="week-date-browser">Thursday<br>12/01/2023</td>
+                        <td class="week-date-browser">Friday<br>13/01/2023</td>
+                        <td class="week-date-browser">Saturday<br>14/01/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc15-01">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>15/01/2023</td>
+                        <td class="week-date-browser">Monday<br>16/01/2023</td>
+                        <td class="week-date-browser">Tuesday<br>17/01/2023</td>
+                        <td class="week-date-browser">Wednesday<br>18/01/2023</td>
+                        <td class="week-date-browser">Thursday<br>19/01/2023</td>
+                        <td class="week-date-browser">Friday<br>20/01/2023</td>
+                        <td class="week-date-browser">Saturday<br>21/01/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc22-01">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>22/01/2023</td>
+                        <td class="week-date-browser">Monday<br>23/01/2023</td>
+                        <td class="week-date-browser">Tuesday<br>24/01/2023</td>
+                        <td class="week-date-browser">Wednesday<br>25/01/2023</td>
+                        <td class="week-date-browser">Thursday<br>26/01/2023</td>
+                        <td class="week-date-browser">Friday<br>27/01/2023</td>
+                        <td class="week-date-browser">Saturday<br>28/01/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc29-01">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>29/01/2023</td>
+                        <td class="week-date-browser">Monday<br>30/01/2023</td>
+                        <td class="week-date-browser">Tuesday<br>31/01/2023</td>
+                        <td class="week-date-browser">Wednesday<br>01/02/2023</td>
+                        <td class="week-date-browser">Thursday<br>02/02/2023</td>
+                        <td class="week-date-browser">Friday<br>03/02/2023</td>
+                        <td class="week-date-browser">Saturday<br>04/02/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc05-02">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>05/02/2023</td>
+                        <td class="week-date-browser">Monday<br>06/02/2023</td>
+                        <td class="week-date-browser">Tuesday<br>07/02/2023</td>
+                        <td class="week-date-browser">Wednesday<br>08/02/2023</td>
+                        <td class="week-date-browser">Thursday<br>09/02/2023</td>
+                        <td class="week-date-browser">Friday<br>10/02/2023</td>
+                        <td class="week-date-browser">Saturday<br>11/02/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc12-02">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>12/02/2023</td>
+                        <td class="week-date-browser">Monday<br>13/02/2023</td>
+                        <td class="week-date-browser">Tuesday<br>14/02/2023</td>
+                        <td class="week-date-browser">Wednesday<br>15/02/2023</td>
+                        <td class="week-date-browser">Thursday<br>16/02/2023</td>
+                        <td class="week-date-browser">Friday<br>17/02/2023</td>
+                        <td class="week-date-browser">Saturday<br>18/02/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc19-02">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>19/02/2023</td>
+                        <td class="week-date-browser">Monday<br>20/02/2023</td>
+                        <td class="week-date-browser">Tuesday<br>21/02/2023</td>
+                        <td class="week-date-browser">Wednesday<br>22/02/2023</td>
+                        <td class="week-date-browser">Thursday<br>23/02/2023</td>
+                        <td class="week-date-browser">Friday<br>24/02/2023</td>
+                        <td class="week-date-browser">Saturday<br>25/02/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc26-02">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>26/02/2023</td>
+                        <td class="week-date-browser">Monday<br>27/02/2023</td>
+                        <td class="week-date-browser">Tuesday<br>28/02/2023</td>
+                        <td class="week-date-browser">Wednesday<br>01/03/2023</td>
+                        <td class="week-date-browser">Thursday<br>02/03/2023</td>
+                        <td class="week-date-browser">Friday<br>03/03/2023</td>
+                        <td class="week-date-browser">Saturday<br>04/03/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc05-03">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>05/03/2023</td>
+                        <td class="week-date-browser">Monday<br>06/03/2023</td>
+                        <td class="week-date-browser">Tuesday<br>07/03/2023</td>
+                        <td class="week-date-browser">Wednesday<br>08/03/2023</td>
+                        <td class="week-date-browser">Thursday<br>09/03/2023</td>
+                        <td class="week-date-browser">Friday<br>10/03/2023</td>
+                        <td class="week-date-browser">Saturday<br>11/03/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc12-03">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>12/03/2023</td>
+                        <td class="week-date-browser">Monday<br>13/03/2023</td>
+                        <td class="week-date-browser">Tuesday<br>14/03/2023</td>
+                        <td class="week-date-browser">Wednesday<br>15/03/2023</td>
+                        <td class="week-date-browser">Thursday<br>16/03/2023</td>
+                        <td class="week-date-browser">Friday<br>17/03/2023</td>
+                        <td class="week-date-browser">Saturday<br>18/03/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc19-03">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>19/03/2023</td>
+                        <td class="week-date-browser">Monday<br>20/03/2023</td>
+                        <td class="week-date-browser">Tuesday<br>21/03/2023</td>
+                        <td class="week-date-browser">Wednesday<br>22/03/2023</td>
+                        <td class="week-date-browser">Thursday<br>23/03/2023</td>
+                        <td class="week-date-browser">Friday<br>24/03/2023</td>
+                        <td class="week-date-browser">Saturday<br>25/03/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc26-03">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>26/03/2023</td>
+                        <td class="week-date-browser">Monday<br>27/03/2023</td>
+                        <td class="week-date-browser">Tuesday<br>28/03/2023</td>
+                        <td class="week-date-browser">Wednesday<br>29/03/2023</td>
+                        <td class="week-date-browser">Thursday<br>30/03/2023</td>
+                        <td class="week-date-browser">Friday<br>31/03/2023</td>
+                        <td class="week-date-browser">Saturday<br>01/04/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc02-04">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>02/04/2023</td>
+                        <td class="week-date-browser">Monday<br>03/04/2023</td>
+                        <td class="week-date-browser">Tuesday<br>04/04/2023</td>
+                        <td class="week-date-browser">Wednesday<br>05/04/2023</td>
+                        <td class="week-date-browser">Thursday<br>06/04/2023</td>
+                        <td class="week-date-browser">Friday<br>07/04/2023</td>
+                        <td class="week-date-browser">Saturday<br>08/04/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc09-04">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>09/04/2023</td>
+                        <td class="week-date-browser">Monday<br>10/04/2023</td>
+                        <td class="week-date-browser">Tuesday<br>11/04/2023</td>
+                        <td class="week-date-browser">Wednesday<br>12/04/2023</td>
+                        <td class="week-date-browser">Thursday<br>13/04/2023</td>
+                        <td class="week-date-browser">Friday<br>14/04/2023</td>
+                        <td class="week-date-browser">Saturday<br>15/04/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc16-04">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>16/04/2023</td>
+                        <td class="week-date-browser">Monday<br>17/04/2023</td>
+                        <td class="week-date-browser">Tuesday<br>18/04/2023</td>
+                        <td class="week-date-browser">Wednesday<br>19/04/2023</td>
+                        <td class="week-date-browser">Thursday<br>20/04/2023</td>
+                        <td class="week-date-browser">Friday<br>21/04/2023</td>
+                        <td class="week-date-browser">Saturday<br>22/04/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc23-04">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>23/04/2023</td>
+                        <td class="week-date-browser">Monday<br>24/04/2023</td>
+                        <td class="week-date-browser">Tuesday<br>25/04/2023</td>
+                        <td class="week-date-browser">Wednesday<br>26/04/2023</td>
+                        <td class="week-date-browser">Thursday<br>27/04/2023</td>
+                        <td class="week-date-browser">Friday<br>28/04/2023</td>
+                        <td class="week-date-browser">Saturday<br>29/04/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc30-04">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>30/04/2023</td>
+                        <td class="week-date-browser">Monday<br>01/05/2023</td>
+                        <td class="week-date-browser">Tuesday<br>02/05/2023</td>
+                        <td class="week-date-browser">Wednesday<br>03/05/2023</td>
+                        <td class="week-date-browser">Thursday<br>04/05/2023</td>
+                        <td class="week-date-browser">Friday<br>05/05/2023</td>
+                        <td class="week-date-browser">Saturday<br>06/05/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc07-05">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>07/05/2023</td>
+                        <td class="week-date-browser">Monday<br>08/05/2023</td>
+                        <td class="week-date-browser">Tuesday<br>09/05/2023</td>
+                        <td class="week-date-browser">Wednesday<br>10/05/2023</td>
+                        <td class="week-date-browser">Thursday<br>11/05/2023</td>
+                        <td class="week-date-browser">Friday<br>12/05/2023</td>
+                        <td class="week-date-browser">Saturday<br>13/05/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc14-05">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>14/05/2023</td>
+                        <td class="week-date-browser">Monday<br>15/05/2023</td>
+                        <td class="week-date-browser">Tuesday<br>16/05/2023</td>
+                        <td class="week-date-browser">Wednesday<br>17/05/2023</td>
+                        <td class="week-date-browser">Thursday<br>18/05/2023</td>
+                        <td class="week-date-browser">Friday<br>19/05/2023</td>
+                        <td class="week-date-browser">Saturday<br>20/05/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc21-05">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>21/05/2023</td>
+                        <td class="week-date-browser">Monday<br>22/05/2023</td>
+                        <td class="week-date-browser">Tuesday<br>23/05/2023</td>
+                        <td class="week-date-browser">Wednesday<br>24/05/2023</td>
+                        <td class="week-date-browser">Thursday<br>25/05/2023</td>
+                        <td class="week-date-browser">Friday<br>26/05/2023</td>
+                        <td class="week-date-browser">Saturday<br>27/05/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc28-05">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>28/05/2023</td>
+                        <td class="week-date-browser">Monday<br>29/05/2023</td>
+                        <td class="week-date-browser">Tuesday<br>30/05/2023</td>
+                        <td class="week-date-browser">Wednesday<br>31/05/2023</td>
+                        <td class="week-date-browser">Thursday<br>01/06/2023</td>
+                        <td class="week-date-browser">Friday<br>02/06/2023</td>
+                        <td class="week-date-browser">Saturday<br>03/06/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc04-06">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>04/06/2023</td>
+                        <td class="week-date-browser">Monday<br>05/06/2023</td>
+                        <td class="week-date-browser">Tuesday<br>06/06/2023</td>
+                        <td class="week-date-browser">Wednesday<br>07/06/2023</td>
+                        <td class="week-date-browser">Thursday<br>08/06/2023</td>
+                        <td class="week-date-browser">Friday<br>09/06/2023</td>
+                        <td class="week-date-browser">Saturday<br>10/06/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc11-06">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>11/06/2023</td>
+                        <td class="week-date-browser">Monday<br>12/06/2023</td>
+                        <td class="week-date-browser">Tuesday<br>13/06/2023</td>
+                        <td class="week-date-browser">Wednesday<br>14/06/2023</td>
+                        <td class="week-date-browser">Thursday<br>15/06/2023</td>
+                        <td class="week-date-browser">Friday<br>16/06/2023</td>
+                        <td class="week-date-browser">Saturday<br>17/06/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc18-06">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>18/06/2023</td>
+                        <td class="week-date-browser">Monday<br>19/06/2023</td>
+                        <td class="week-date-browser">Tuesday<br>20/06/2023</td>
+                        <td class="week-date-browser">Wednesday<br>21/06/2023</td>
+                        <td class="week-date-browser">Thursday<br>22/06/2023</td>
+                        <td class="week-date-browser">Friday<br>23/06/2023</td>
+                        <td class="week-date-browser">Saturday<br>24/06/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc25-06">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>25/06/2023</td>
+                        <td class="week-date-browser">Monday<br>26/06/2023</td>
+                        <td class="week-date-browser">Tuesday<br>27/06/2023</td>
+                        <td class="week-date-browser">Wednesday<br>28/06/2023</td>
+                        <td class="week-date-browser">Thursday<br>29/06/2023</td>
+                        <td class="week-date-browser">Friday<br>30/06/2023</td>
+                        <td class="week-date-browser">Saturday<br>01/07/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc02-07">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>01/07/2023</td>
+                        <td class="week-date-browser">Monday<br>02/07/2023</td>
+                        <td class="week-date-browser">Tuesday<br>03/07/2023</td>
+                        <td class="week-date-browser">Wednesday<br>04/07/2023</td>
+                        <td class="week-date-browser">Thursday<br>05/07/2023</td>
+                        <td class="week-date-browser">Friday<br>06/07/2023</td>
+                        <td class="week-date-browser">Saturday<br>07/07/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc09-07">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>09/07/2023</td>
+                        <td class="week-date-browser">Monday<br>10/07/2023</td>
+                        <td class="week-date-browser">Tuesday<br>11/07/2023</td>
+                        <td class="week-date-browser">Wednesday<br>12/07/2023</td>
+                        <td class="week-date-browser">Thursday<br>13/07/2023</td>
+                        <td class="week-date-browser">Friday<br>14/07/2023</td>
+                        <td class="week-date-browser">Saturday<br>15/07/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc16-07">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>16/07/2023</td>
+                        <td class="week-date-browser">Monday<br>17/07/2023</td>
+                        <td class="week-date-browser">Tuesday<br>18/07/2023</td>
+                        <td class="week-date-browser">Wednesday<br>19/07/2023</td>
+                        <td class="week-date-browser">Thursday<br>20/07/2023</td>
+                        <td class="week-date-browser">Friday<br>21/07/2023</td>
+                        <td class="week-date-browser">Saturday<br>22/07/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc23-07">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>23/07/2023</td>
+                        <td class="week-date-browser">Monday<br>24/07/2023</td>
+                        <td class="week-date-browser">Tuesday<br>25/07/2023</td>
+                        <td class="week-date-browser">Wednesday<br>26/07/2023</td>
+                        <td class="week-date-browser">Thursday<br>27/07/2023</td>
+                        <td class="week-date-browser">Friday<br>28/07/2023</td>
+                        <td class="week-date-browser">Saturday<br>29/07/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc30-07">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>30/07/2023</td>
+                        <td class="week-date-browser">Monday<br>31/07/2023</td>
+                        <td class="week-date-browser">Tuesday<br>01/08/2023</td>
+                        <td class="week-date-browser">Wednesday<br>02/08/2023</td>
+                        <td class="week-date-browser">Thursday<br>03/08/2023</td>
+                        <td class="week-date-browser">Friday<br>04/08/2023</td>
+                        <td class="week-date-browser">Saturday<br>05/08/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc06-08">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>06/08/2023</td>
+                        <td class="week-date-browser">Monday<br>07/08/2023</td>
+                        <td class="week-date-browser">Tuesday<br>08/08/2023</td>
+                        <td class="week-date-browser">Wednesday<br>09/08/2023</td>
+                        <td class="week-date-browser">Thursday<br>10/08/2023</td>
+                        <td class="week-date-browser">Friday<br>11/08/2023</td>
+                        <td class="week-date-browser">Saturday<br>12/08/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc13-08">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>13/08/2023</td>
+                        <td class="week-date-browser">Monday<br>14/08/2023</td>
+                        <td class="week-date-browser">Tuesday<br>15/08/2023</td>
+                        <td class="week-date-browser">Wednesday<br>16/08/2023</td>
+                        <td class="week-date-browser">Thursday<br>17/08/2023</td>
+                        <td class="week-date-browser">Friday<br>18/08/2023</td>
+                        <td class="week-date-browser">Saturday<br>19/08/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc20-08">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>20/08/2023</td>
+                        <td class="week-date-browser">Monday<br>21/08/2023</td>
+                        <td class="week-date-browser">Tuesday<br>22/08/2023</td>
+                        <td class="week-date-browser">Wednesday<br>23/08/2023</td>
+                        <td class="week-date-browser">Thursday<br>24/08/2023</td>
+                        <td class="week-date-browser">Friday<br>25/08/2023</td>
+                        <td class="week-date-browser">Saturday<br>26/08/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc27-08">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>27/08/2023</td>
+                        <td class="week-date-browser">Monday<br>28/08/2023</td>
+                        <td class="week-date-browser">Tuesday<br>29/08/2023</td>
+                        <td class="week-date-browser">Wednesday<br>30/08/2023</td>
+                        <td class="week-date-browser">Thursday<br>31/08/2023</td>
+                        <td class="week-date-browser">Friday<br>01/09/2023</td>
+                        <td class="week-date-browser">Saturday<br>02/09/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc03-09">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>03/09/2023</td>
+                        <td class="week-date-browser">Monday<br>04/09/2023</td>
+                        <td class="week-date-browser">Tuesday<br>05/09/2023</td>
+                        <td class="week-date-browser">Wednesday<br>06/09/2023</td>
+                        <td class="week-date-browser">Thursday<br>07/09/2023</td>
+                        <td class="week-date-browser">Friday<br>08/09/2023</td>
+                        <td class="week-date-browser">Saturday<br>09/09/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc10-09">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>10/09/2023</td>
+                        <td class="week-date-browser">Monday<br>11/09/2023</td>
+                        <td class="week-date-browser">Tuesday<br>12/09/2023</td>
+                        <td class="week-date-browser">Wednesday<br>13/09/2023</td>
+                        <td class="week-date-browser">Thursday<br>14/09/2023</td>
+                        <td class="week-date-browser">Friday<br>15/09/2023</td>
+                        <td class="week-date-browser">Saturday<br>16/09/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc17-09">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>17/09/2023</td>
+                        <td class="week-date-browser">Monday<br>18/09/2023</td>
+                        <td class="week-date-browser">Tuesday<br>19/09/2023</td>
+                        <td class="week-date-browser">Wednesday<br>20/09/2023</td>
+                        <td class="week-date-browser">Thursday<br>21/09/2023</td>
+                        <td class="week-date-browser">Friday<br>22/09/2023</td>
+                        <td class="week-date-browser">Saturday<br>23/09/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc24-09">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>24/09/2023</td>
+                        <td class="week-date-browser">Monday<br>25/09/2023</td>
+                        <td class="week-date-browser">Tuesday<br>26/09/2023</td>
+                        <td class="week-date-browser">Wednesday<br>27/09/2023</td>
+                        <td class="week-date-browser">Thursday<br>28/09/2023</td>
+                        <td class="week-date-browser">Friday<br>29/09/2023</td>
+                        <td class="week-date-browser">Saturday<br>30/09/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc01-10">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>01/10/2023</td>
+                        <td class="week-date-browser">Monday<br>02/10/2023</td>
+                        <td class="week-date-browser">Tuesday<br>03/10/2023</td>
+                        <td class="week-date-browser">Wednesday<br>04/10/2023</td>
+                        <td class="week-date-browser">Thursday<br>05/10/2023</td>
+                        <td class="week-date-browser">Friday<br>06/10/2023</td>
+                        <td class="week-date-browser">Saturday<br>07/10/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc08-10">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>08/10/2023</td>
+                        <td class="week-date-browser">Monday<br>09/10/2023</td>
+                        <td class="week-date-browser">Tuesday<br>10/10/2023</td>
+                        <td class="week-date-browser">Wednesday<br>11/10/2023</td>
+                        <td class="week-date-browser">Thursday<br>12/10/2023</td>
+                        <td class="week-date-browser">Friday<br>13/10/2023</td>
+                        <td class="week-date-browser">Saturday<br>14/10/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc15-10">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>15/10/2023</td>
+                        <td class="week-date-browser">Monday<br>16/10/2023</td>
+                        <td class="week-date-browser">Tuesday<br>17/10/2023</td>
+                        <td class="week-date-browser">Wednesday<br>18/10/2023</td>
+                        <td class="week-date-browser">Thursday<br>19/10/2023</td>
+                        <td class="week-date-browser">Friday<br>20/10/2023</td>
+                        <td class="week-date-browser">Saturday<br>21/10/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc22-10">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>22/10/2023</td>
+                        <td class="week-date-browser">Monday<br>23/10/2023</td>
+                        <td class="week-date-browser">Tuesday<br>24/10/2023</td>
+                        <td class="week-date-browser">Wednesday<br>25/10/2023</td>
+                        <td class="week-date-browser">Thursday<br>26/10/2023</td>
+                        <td class="week-date-browser">Friday<br>27/10/2023</td>
+                        <td class="week-date-browser">Saturday<br>28/10/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc29-10">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>29/10/2023</td>
+                        <td class="week-date-browser">Monday<br>30/10/2023</td>
+                        <td class="week-date-browser">Tuesday<br>31/10/2023</td>
+                        <td class="week-date-browser">Wednesday<br>01/11/2023</td>
+                        <td class="week-date-browser">Thursday<br>02/11/2023</td>
+                        <td class="week-date-browser">Friday<br>03/11/2023</td>
+                        <td class="week-date-browser">Saturday<br>04/11/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc05-11">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>05/11/2023</td>
+                        <td class="week-date-browser">Monday<br>06/11/2023</td>
+                        <td class="week-date-browser">Tuesday<br>07/11/2023</td>
+                        <td class="week-date-browser">Wednesday<br>08/11/2023</td>
+                        <td class="week-date-browser">Thursday<br>09/11/2023</td>
+                        <td class="week-date-browser">Friday<br>10/11/2023</td>
+                        <td class="week-date-browser">Saturday<br>11/11/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc12-11">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>12/11/2023</td>
+                        <td class="week-date-browser">Monday<br>13/11/2023</td>
+                        <td class="week-date-browser">Tuesday<br>14/11/2023</td>
+                        <td class="week-date-browser">Wednesday<br>15/11/2023</td>
+                        <td class="week-date-browser">Thursday<br>16/11/2023</td>
+                        <td class="week-date-browser">Friday<br>17/11/2023</td>
+                        <td class="week-date-browser">Saturday<br>18/11/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc19-11">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>19/11/2023</td>
+                        <td class="week-date-browser">Monday<br>20/11/2023</td>
+                        <td class="week-date-browser">Tuesday<br>21/11/2023</td>
+                        <td class="week-date-browser">Wednesday<br>22/11/2023</td>
+                        <td class="week-date-browser">Thursday<br>23/11/2023</td>
+                        <td class="week-date-browser">Friday<br>24/11/2023</td>
+                        <td class="week-date-browser">Saturday<br>25/11/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc26-11">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>26/11/2023</td>
+                        <td class="week-date-browser">Monday<br>27/11/2023</td>
+                        <td class="week-date-browser">Tuesday<br>28/11/2023</td>
+                        <td class="week-date-browser">Wednesday<br>29/11/2023</td>
+                        <td class="week-date-browser">Thursday<br>30/11/2023</td>
+                        <td class="week-date-browser">Friday<br>01/12/2023</td>
+                        <td class="week-date-browser">Saturday<br>02/12/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc03-12">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>03/12/2023</td>
+                        <td class="week-date-browser">Monday<br>04/12/2023</td>
+                        <td class="week-date-browser">Tuesday<br>05/12/2023</td>
+                        <td class="week-date-browser">Wednesday<br>06/12/2023</td>
+                        <td class="week-date-browser">Thursday<br>07/12/2023</td>
+                        <td class="week-date-browser">Friday<br>08/12/2023</td>
+                        <td class="week-date-browser">Saturday<br>09/12/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc10-12">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>10/12/2023</td>
+                        <td class="week-date-browser">Monday<br>11/12/2023</td>
+                        <td class="week-date-browser">Tuesday<br>12/12/2023</td>
+                        <td class="week-date-browser">Wednesday<br>13/12/2023</td>
+                        <td class="week-date-browser">Thursday<br>14/12/2023</td>
+                        <td class="week-date-browser">Friday<br>15/12/2023</td>
+                        <td class="week-date-browser">Saturday<br>16/12/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc17-12">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>17/12/2023</td>
+                        <td class="week-date-browser">Monday<br>18/12/2023</td>
+                        <td class="week-date-browser">Tuesday<br>19/12/2023</td>
+                        <td class="week-date-browser">Wednesday<br>20/12/2023</td>
+                        <td class="week-date-browser">Thursday<br>21/12/2023</td>
+                        <td class="week-date-browser">Friday<br>22/12/2023</td>
+                        <td class="week-date-browser">Saturday<br>23/12/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="booking-browser" id="bb-wc24-12">
+            <table class="booking-table-container">
+                <thead class="browser-header">
+                    <tr>
+                        <td style="padding-left: 5px;">Ref:</td>
+                        <td style="width: 100px;">Client:</td>
+                        <td style="width: 150px;">Employee:</td>
+                        <td>Licence:</td>
+                        <td class="week-date-browser">Sunday<br>24/12/2023</td>
+                        <td class="week-date-browser">Monday<br>25/12/2023</td>
+                        <td class="week-date-browser">Tuesday<br>26/12/2023</td>
+                        <td class="week-date-browser">Wednesday<br>27/12/2023</td>
+                        <td class="week-date-browser">Thursday<br>28/12/2023</td>
+                        <td class="week-date-browser">Friday<br>29/12/2023</td>
+                        <td class="week-date-browser">Saturday<br>30/12/2023</td>
+                        <td class="rebook-text">Info:</td>
+                        <td class="rebook-text">Rebook</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
 
     <!--JAVASCRIPT-->
     <script src="assets/js/main.js"></script>
     <script src="assets/js/bookings.js"></script>
 </body>
 </html>
+
+
+<!-- <tbody id="bookings-table" class="browser-body">
+        <tr class="browser-rows">
+            <td><a href="#" class="universal-links">1001</a></td>
+            <td><a href="#" class="universal-links">Circle Express</a></td>
+            <td><a href="#" class="universal-links">Ben Bennett</a></td>
+            <td>LGV CE</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><button class="browser-button status-confirmed">00:00-00:00</button></td>
+            <td><button class="browser-button status-tbc">00:00-00:00</button></td>
+            <td></td>
+            <td><button class="info-buttons ibutton-style"><i class="fas fa-info-circle"></i></button></td>
+            <td class="center-cell"><a href="#" class="universal-links"><i class="fas fa-sync"></i></a></td>
+        </tr>
+    -->

@@ -1,5 +1,8 @@
 /* BOOKING BROWSER
 ================================================ */
+.booking-browser {
+    display: none;
+}
 
 #days-shown {
     width: 50px;
@@ -7,7 +10,7 @@
 
 .booking-table-container {
     /* border: 1px solid white; */
-    width: 91%;
+    width: 94%;
     border-collapse: collapse;
     font-size: 16px;
 }
@@ -70,4 +73,65 @@
 
 .lost-employee-booking {
     opacity: 0.5;
+}
+
+/* BOOKING COLORS
+================================================ */
+
+
+
+
+/* CREATE BOOKING
+================================================ */
+.create-booking-container {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+}
+
+.create-booking-driv-container {
+    /* border: 1px solid white; */
+    width: 90%;
+    height: 90%;
+    padding-bottom: 20px;
+}
+
+.question-container {
+    /* border: 1px solid white; */
+    display: flex;
+    margin: 5px 0;
+}
+
+.label-box-container {
+    border: 1px solid transparent;
+    width: 20%;
+    text-align: right;
+    padding: 5px 20px;
+}
+
+.input-box-container {
+    border: 1px solid transparent;
+    width: 80%;
+    padding: 5px 0;
+}
+
+.input-box-form {
+    width: 400px;
+}
+
+.option-box {
+    height: 20px;
+    width: 100px;
+}
+
+.small-label {
+    font-size: 12px;
+}
+
+.submit-booking-button-container {
+    /* border: 1px solid white; */
+    margin-left: 30%;
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
 }
